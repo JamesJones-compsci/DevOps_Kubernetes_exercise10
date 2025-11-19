@@ -2,6 +2,10 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: hellodocker
+  labels:
+    app: hellodocker
+    tier: frontend
+    monitored: "true"
 spec:
   replicas: 3 #OR your desired number of replicas
   selector:
@@ -11,6 +15,8 @@ spec:
     metadata:
       labels:
         app: hellodocker
+        tier: frontend
+        monitored: "true"
     spec:
       containers:
         - name: hellodocker
