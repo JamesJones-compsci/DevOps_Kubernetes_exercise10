@@ -20,27 +20,27 @@ spec:
     spec:
       containers:
         - name: hellodocker
-          image: pritamworld/hellodocker:b6a2c2efbb82c183d2b5bc4d95abf4f1a9aaa58d #Replace with your image <dockerusername>/hellodocker:latest
+          image: jonesjamescompsci/hellodocker:latest #Replace with your image <dockerusername>/hellodocker:latest
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80
           env:
             - name: NAME
-              value: "Pritesh from minikube and Kubernetes"
+              value: "James Jones from minikube, Kubernetes, and ArgoCD"
           readinessProbe:
             httpGet:
               path: /
               port: 80
             initialDelaySeconds: 5
             periodSeconds: 5
-            timeoutSeconds: 10
+            timeoutSeconds: 30
           livenessProbe:
             httpGet:
               path: /
               port: 80
             initialDelaySeconds: 10
             periodSeconds: 10
-            timeoutSeconds: 10
+            timeoutSeconds: 30
           resources:
             limits:
               memory: 512Mi
