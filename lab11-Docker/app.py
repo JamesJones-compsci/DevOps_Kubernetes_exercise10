@@ -34,7 +34,7 @@ def greet():
     return "Welcome to Minikube, kubernetes and argoCD examples"
 
 @app.route("/welcome")
-def greet():
+def welcome():
     return "Welcome to GBC DevOps!"
 
 if __name__ == "__main__":
